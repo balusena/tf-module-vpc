@@ -18,4 +18,5 @@ module "subnets" {
 
   env         = var.env
   tags        = var.tags
+  az          = var.az
 }
