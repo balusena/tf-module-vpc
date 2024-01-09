@@ -3,8 +3,8 @@ resource "aws_vpc" "main" {
   enable_dns_support = true
   tags = merge({
     Name = "${var.env}-vpc"
-  },
-    var.tags)
+    },
+  var.tags)
 }
 
 module "subnets" {
