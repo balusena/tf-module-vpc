@@ -9,3 +9,13 @@ resource "aws_subnet" "main" {
   },
     var.tags)
 }
+
+resource "aws_route_table" "table" {
+  vpc_id = var.vpc_id
+
+  tags = merge({
+    Name = "${var.env}-${var.subnet_name}"
+  },
+    var.tags)
+}
+
