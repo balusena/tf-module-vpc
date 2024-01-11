@@ -57,7 +57,7 @@ resource "aws_nat_gateway" "ngw" {
 }
 
 resource "aws_nat_gateway" "route-ngw" {
-  count                  = length(local.private_route_table_ids )
+  count                  = length(local.private_route_table_ids)
   route_table_id         = element(local.private_route_table_ids, count.index)
   destination_cidr_block = "0.0.0.0/0"
   nat_gateway_id         = aws_nat_gateway.ngw.id
