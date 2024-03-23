@@ -6,8 +6,8 @@ resource "aws_subnet" "main" {
 
   tags = merge({
     Name = "${var.env}-${var.subnet_name}-subnet"
-  },
-    var.tags)
+    },
+  var.tags)
 }
 
 resource "aws_route_table" "table" {
@@ -15,8 +15,8 @@ resource "aws_route_table" "table" {
 
   tags = merge({
     Name = "${var.env}-${var.subnet_name}"
-  },
-    var.tags)
+    },
+  var.tags)
 }
 
 resource "aws_route_table_association" "association" {
