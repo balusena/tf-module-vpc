@@ -32,7 +32,7 @@ resource "aws_internet_gateway" "igw" {
 
   tags = merge({
     Name = "${var.env}-igw"
-  },
+    },
   var.tags)
 }
 
@@ -52,7 +52,7 @@ resource "aws_nat_gateway" "ngw" {
 
   tags = merge({
     Name = "${var.env}-ngw"
-  },
+    },
   var.tags)
 }
 
@@ -70,7 +70,7 @@ resource "aws_route" "peer-route" {
   vpc_peering_connection_id = aws_vpc_peering_connection.peer.id
 }
 
-resource "aws_route" "default-vpc_peer-route" {
+resource "aws_route" "default-vpc-peer-route" {
   route_table_id            = var.default_vpc_rt
   destination_cidr_block    = var.cidr_block
   vpc_peering_connection_id = aws_vpc_peering_connection.peer.id
